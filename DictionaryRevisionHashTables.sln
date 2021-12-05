@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.1705
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryRevision", "DictionaryRevision\DictionaryRevision.csproj", "{50BEC956-FCAD-48B0-9B8B-39BD91ADB4F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashTableChainingStrategy", "HashTableChainingStrategy\HashTableChainingStrategy.csproj", "{04F64D9E-14C5-4A57-93A9-320ECB516DA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashTableOpenAddressingStrategy", "HashTableOpenAddressingStrategy\HashTableOpenAddressingStrategy.csproj", "{18491EDA-6936-484A-A6D2-E472EEBECF9D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{50BEC956-FCAD-48B0-9B8B-39BD91ADB4F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50BEC956-FCAD-48B0-9B8B-39BD91ADB4F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50BEC956-FCAD-48B0-9B8B-39BD91ADB4F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04F64D9E-14C5-4A57-93A9-320ECB516DA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04F64D9E-14C5-4A57-93A9-320ECB516DA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04F64D9E-14C5-4A57-93A9-320ECB516DA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04F64D9E-14C5-4A57-93A9-320ECB516DA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18491EDA-6936-484A-A6D2-E472EEBECF9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18491EDA-6936-484A-A6D2-E472EEBECF9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18491EDA-6936-484A-A6D2-E472EEBECF9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18491EDA-6936-484A-A6D2-E472EEBECF9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
