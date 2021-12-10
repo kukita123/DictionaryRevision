@@ -31,16 +31,23 @@ namespace HashTableOpenAddressingStrategy
 
         private bool CheckOpenSpace()//checks for open spaces in the table for insertion
         {
-            bool isOpen = false;
-            for (int i = 0; i < table.Length; i++)
-            {
-                if (table[i] == null)
-                {
-                    isOpen = true;
-                }
-            }
+            //bool isOpen = false;
+            //for (int i = 0; i < table.Length; i++)
+            //{
+            //    if (table[i] == null)
+            //    {
+            //        isOpen = true;
+            //    }
+            //}
 
-            return isOpen;
+            //return isOpen;
+
+            foreach (var item in table)
+            {
+                if (item == null)
+                    return true;
+            }
+            return false;
         }
 
         public void Insert(int key, string data)
@@ -51,7 +58,8 @@ namespace HashTableOpenAddressingStrategy
                 return;
             }
 
-            int hash = key % table.Length;
+            int hash = Hash(key);
+
             //Linear probbing:
             while (table[hash] != null && table[hash].key != key)
             {
@@ -62,7 +70,7 @@ namespace HashTableOpenAddressingStrategy
 
         public string Retrieve(int key)
         {
-            int hash = key % table.Length;
+            int hash = Hash(key);
 
             while (table[hash] != null && table[hash].key != key)
             {
@@ -79,7 +87,7 @@ namespace HashTableOpenAddressingStrategy
 
         public bool Remove(int key)
         {
-            int hash = key % table.Length;
+            int hash = Hash(key);
 
             while (table[hash] != null && table[hash].key != key)
             {
@@ -122,7 +130,7 @@ namespace HashTableOpenAddressingStrategy
             }
 
             int i = 0;
-            int hash = key % table.Length;
+            int hash = Hash(key);
             //quadratic probing:
             while (table[hash] != null && table[hash].key != key)
             {
@@ -155,6 +163,11 @@ namespace HashTableOpenAddressingStrategy
             }
             table[hashVal] = new Entry(key, data);
             return;
+        }
+
+        private int Hash(int key)
+        {
+            return key % table.Length;
         }
 
         private int Hash1(int key)
