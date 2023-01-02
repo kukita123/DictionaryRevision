@@ -40,6 +40,11 @@ namespace DictionaryRevision
                     map.Add(ch, 1);                
             }
 
+            //foreach (var item in map)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
             foreach (var item in map)
             {
                 if (item.Value == 1)
@@ -49,6 +54,7 @@ namespace DictionaryRevision
             return '\0';
         } 
 
+        //first repeated character using Dictionary
         static char FirstRepSymbol(string input)
         {
             Dictionary<char, int> map = new Dictionary<char, int>();
@@ -64,7 +70,27 @@ namespace DictionaryRevision
             }
 
             return '\0';
-        }        
+        } 
+        
+        //first repeated character using HashSet:
+        static char FirstRepChar_Set(string input)
+        {
+            HashSet<char> set = new HashSet<char>();
+
+            input = input.ToLower();
+
+            foreach (var ch in input.ToCharArray())
+            {
+                if (set.Contains(ch))
+                    return ch;
+
+                set.Add(ch);
+            }
+
+            return '\0';
+        }
+        
+        
 
         static int GetHash(string key)
         {
@@ -82,6 +108,8 @@ namespace DictionaryRevision
 
             Console.WriteLine(FirstRepSymbol("A green apple"));
 
+            Console.WriteLine(FirstRepChar_Set("A green apple"));
+
             Console.WriteLine(GetHash("Mariana") % 8);
             Console.WriteLine(GetHash("Svetlio") % 8);
             Console.WriteLine(GetHash("Zdravka") % 8);
@@ -93,6 +121,7 @@ namespace DictionaryRevision
             Person woman = new Person();
             woman.name = "Mariana";
             woman.age = 52;
+
 
             Console.WriteLine(man.GetHashCode());
             Console.WriteLine(woman.GetHashCode());
